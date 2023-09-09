@@ -1,0 +1,64 @@
+From 0adea46477bd4ca177a5cc0e2357021cac1659a9 Mon Sep 17 00:00:00 2001
+From: Trevor Woerner <twoerner@gmail.com>
+Date: Tue, 15 Aug 2023 20:23:04 -0400
+Subject: [PATCH v3 1/4] ARM: dts: am335x-pocketbeagle: update LED information
+
+Add the "color" and "description" properties.
+
+Upstream-Status: Submitted
+Signed-off-by: Trevor Woerner <twoerner@gmail.com>
+---
+ arch/arm/boot/dts/am335x-pocketbeagle.dts | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/arch/arm/boot/dts/am335x-pocketbeagle.dts b/arch/arm/boot/dts/am335x-pocketbeagle.dts
+index 5dfe4d4bab93..667dded1a167 100644
+--- a/arch/arm/boot/dts/am335x-pocketbeagle.dts
++++ b/arch/arm/boot/dts/am335x-pocketbeagle.dts
+@@ -8,6 +8,7 @@
+ 
+ #include "am33xx.dtsi"
+ #include "am335x-osd335x-common.dtsi"
++#include <dt-bindings/leds/common.h>
+ 
+ / {
+ 	model = "TI AM335x PocketBeagle";
+@@ -25,6 +26,8 @@ leds {
+ 
+ 		led-usr0 {
+ 			label = "beaglebone:green:usr0";
++			color = <LED_COLOR_ID_BLUE>;
++			function = LED_FUNCTION_HEARTBEAT;
+ 			gpios = <&gpio1 21 GPIO_ACTIVE_HIGH>;
+ 			linux,default-trigger = "heartbeat";
+ 			default-state = "off";
+@@ -32,6 +35,8 @@ led-usr0 {
+ 
+ 		led-usr1 {
+ 			label = "beaglebone:green:usr1";
++			color = <LED_COLOR_ID_BLUE>;
++			function = LED_FUNCTION_DISK_ACTIVITY;
+ 			gpios = <&gpio1 22 GPIO_ACTIVE_HIGH>;
+ 			linux,default-trigger = "mmc0";
+ 			default-state = "off";
+@@ -39,6 +44,8 @@ led-usr1 {
+ 
+ 		led-usr2 {
+ 			label = "beaglebone:green:usr2";
++			color = <LED_COLOR_ID_BLUE>;
++			function = LED_FUNCTION_CPU;
+ 			gpios = <&gpio1 23 GPIO_ACTIVE_HIGH>;
+ 			linux,default-trigger = "cpu0";
+ 			default-state = "off";
+@@ -46,6 +53,8 @@ led-usr2 {
+ 
+ 		led-usr3 {
+ 			label = "beaglebone:green:usr3";
++			color = <LED_COLOR_ID_BLUE>;
++			function = LED_FUNCTION_INDICATOR;
+ 			gpios = <&gpio1 24 GPIO_ACTIVE_HIGH>;
+ 			default-state = "off";
+ 		};
+-- 
+2.41.0.327.gaa9166bcc0ba
+

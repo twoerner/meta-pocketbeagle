@@ -1,0 +1,39 @@
+From 8a1978f9b736e1f41a4ca731c8d1e1822c5c03fa Mon Sep 17 00:00:00 2001
+From: Trevor Woerner <twoerner@gmail.com>
+Date: Tue, 15 Aug 2023 20:23:06 -0400
+Subject: [PATCH v3 4/4] ARM: dts: am335x-pocketbeagle: add missing GPIO mux
+
+Add the default MODE setting of a GPIO pin that was missing from the device
+tree (i.e. P2.20/gpio2_00). This is to ensure the GPIO pins match the
+pocketbeagle wiring expectations.
+
+Upstream-Status: Submitted
+Signed-off-by: Trevor Woerner <twoerner@gmail.com>
+---
+ arch/arm/boot/dts/am335x-pocketbeagle.dts | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/arch/arm/boot/dts/am335x-pocketbeagle.dts b/arch/arm/boot/dts/am335x-pocketbeagle.dts
+index e35d84ca5706..8042917b3b3b 100644
+--- a/arch/arm/boot/dts/am335x-pocketbeagle.dts
++++ b/arch/arm/boot/dts/am335x-pocketbeagle.dts
+@@ -271,6 +271,16 @@ AM33XX_PADCONF(AM335X_PIN_GPMC_AD14, PIN_INPUT_PULLUP, MUX_MODE7)
+ 		pinctrl-single,bias-pulldown   = < 0x10  0x00  0x10  0x18>;
+ 	};
+ 
++	/* P2_20 (ZCZ ball T13) gpio2_00 0x888 */
++	P2_20_gpio: pinmux_P2_20_gpio {
++		pinctrl-single,pins = <
++			AM33XX_PADCONF(AM335X_PIN_GPMC_CSN3, PIN_INPUT_PULLUP, MUX_MODE7)
++		>;
++		pinctrl-single,bias-pullup   =   < 0x10  0x10  0x00  0x18>;
++		pinctrl-single,bias-pulldown   = < 0x10  0x00  0x10  0x18>;
++	};
++
++
+ 	/* P2_10 (ZCZ ball R14) gpio1_20 0x850 PIN 20 */
+ 	P2_10_gpio: pinmux_P2_10_gpio {
+ 		pinctrl-single,pins = <
+-- 
+2.41.0.327.gaa9166bcc0ba
+
