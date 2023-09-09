@@ -22,8 +22,8 @@ This layer can optionally be combined with meta-ti:
 * layers: meta-ti-extras
 * branches: (matching)
 
-meta-ti/meta-ti-extras has a dependency on meta-ti/meta-ti-bsp
-meta-ti/meta-ti-bsp has a dependency on meta-arm/meta-arm
+meta-ti/meta-ti-extras has a dependency on meta-ti/meta-ti-bsp   
+meta-ti/meta-ti-bsp has a dependency on meta-arm/meta-arm   
 meta-arm/meta-arm has a dependency on meta-arm/meta-toolchain
 
 Contributing/Patches:
