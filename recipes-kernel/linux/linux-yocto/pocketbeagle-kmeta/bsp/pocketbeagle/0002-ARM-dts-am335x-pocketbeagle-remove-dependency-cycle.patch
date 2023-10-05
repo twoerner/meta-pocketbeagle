@@ -12,13 +12,13 @@ similar to the following:
 Upstream-Status: Submitted
 Signed-off-by: Trevor Woerner <twoerner@gmail.com>
 ---
- arch/arm/boot/dts/am335x-pocketbeagle.dts | 5 -----
+ arch/arm/boot/dts/ti/omap/am335x-pocketbeagle.dts | 5 -----
  1 file changed, 5 deletions(-)
 
-diff --git a/arch/arm/boot/dts/am335x-pocketbeagle.dts b/arch/arm/boot/dts/am335x-pocketbeagle.dts
+diff --git a/arch/arm/boot/dts/ti/omap/am335x-pocketbeagle.dts b/arch/arm/boot/dts/ti/omap/am335x-pocketbeagle.dts
 index 667dded1a167..d4d1770657da 100644
---- a/arch/arm/boot/dts/am335x-pocketbeagle.dts
-+++ b/arch/arm/boot/dts/am335x-pocketbeagle.dts
+--- a/arch/arm/boot/dts/ti/omap/am335x-pocketbeagle.dts
++++ b/arch/arm/boot/dts/ti/omap/am335x-pocketbeagle.dts
 @@ -217,11 +217,6 @@ &am33xx_pinmux {
  	compatible = "pinconf-single";
  	pinctrl-names = "default";
@@ -29,7 +29,7 @@ index 667dded1a167..d4d1770657da 100644
 -			&P2_17_gpio >;
 -
  	/* P2_03 (ZCZ ball T10) gpio0_23 0x824 PIN 9 */
- 	P2_03_gpio: pinmux_P2_03_gpio {
+ 	P2_03_gpio: P2-03-gpio-pins {
  		pinctrl-single,pins = <
 -- 
 2.41.0.327.gaa9166bcc0ba

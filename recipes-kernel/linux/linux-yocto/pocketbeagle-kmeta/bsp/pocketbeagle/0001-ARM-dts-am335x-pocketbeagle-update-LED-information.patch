@@ -8,13 +8,13 @@ Add the "color" and "description" properties.
 Upstream-Status: Submitted
 Signed-off-by: Trevor Woerner <twoerner@gmail.com>
 ---
- arch/arm/boot/dts/am335x-pocketbeagle.dts | 9 +++++++++
+ arch/arm/boot/dts/ti/omap/am335x-pocketbeagle.dts | 9 +++++++++
  1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm/boot/dts/am335x-pocketbeagle.dts b/arch/arm/boot/dts/am335x-pocketbeagle.dts
+diff --git a/arch/arm/boot/dts/ti/omap/am335x-pocketbeagle.dts b/arch/arm/boot/dts/ti/omap/am335x-pocketbeagle.dts
 index 5dfe4d4bab93..667dded1a167 100644
---- a/arch/arm/boot/dts/am335x-pocketbeagle.dts
-+++ b/arch/arm/boot/dts/am335x-pocketbeagle.dts
+--- a/arch/arm/boot/dts/ti/omap/am335x-pocketbeagle.dts
++++ b/arch/arm/boot/dts/ti/omap/am335x-pocketbeagle.dts
 @@ -8,6 +8,7 @@
  
  #include "am33xx.dtsi"
